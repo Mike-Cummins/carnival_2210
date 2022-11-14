@@ -1,4 +1,3 @@
-require 'date'
 require './ride'
 require './visitor'
 
@@ -20,7 +19,7 @@ class Carnival
   def most_popular_ride
     @rides.max_by do |ride|
       ride.ride_count
-    end 
+    end
   end
 
   def most_profitable_ride

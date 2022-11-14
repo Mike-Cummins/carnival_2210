@@ -4,21 +4,21 @@ require './lib/carnival'
 
 RSpec.describe Carnival do
   it 'exists and has attributes' do
-    carnival = Carnival.new("State Fair", 3)
+    carnival = Carnival.new('State Fair', 3)
 
     expect(carnival).to be_a(Carnival)
-    expect(carnival.name).to eq("State Fair")
+    expect(carnival.name).to eq('State Fair')
     expect(carnival.duration).to eq(3)
   end
 
-  it 'has rides, empty by default' do 
-    carnival = Carnival.new("State Fair", 3)
+  it 'has rides, empty by default' do
+    carnival = Carnival.new('State Fair', 3)
 
     expect(carnival.rides).to eq([])
   end
 
   it 'can have rides added' do
-    carnival = Carnival.new("State Fair", 3)
+    carnival = Carnival.new('State Fair', 3)
     ride1 = Ride.new({ name: 'Carousel', min_height: 24, admission_fee: 1, excitement: :gentle })
     ride2 = Ride.new({ name: 'Ferris Wheel', min_height: 36, admission_fee: 5, excitement: :gentle })
     ride3 = Ride.new({ name: 'Roller Coaster', min_height: 54, admission_fee: 2, excitement: :thrilling })
@@ -30,7 +30,7 @@ RSpec.describe Carnival do
   end
 
   it 'shows most popular ride' do
-    carnival = Carnival.new("State Fair", 3)
+    carnival = Carnival.new('State Fair', 3)
     ride1 = Ride.new({ name: 'Carousel', min_height: 24, admission_fee: 1, excitement: :gentle })
     ride2 = Ride.new({ name: 'Ferris Wheel', min_height: 36, admission_fee: 5, excitement: :gentle })
     ride3 = Ride.new({ name: 'Roller Coaster', min_height: 54, admission_fee: 2, excitement: :thrilling })
@@ -51,7 +51,7 @@ RSpec.describe Carnival do
   end
 
   it 'shows most profitable ride' do
-    carnival = Carnival.new("State Fair", 3)
+    carnival = Carnival.new('State Fair', 3)
     ride1 = Ride.new({ name: 'Carousel', min_height: 24, admission_fee: 1, excitement: :gentle })
     ride2 = Ride.new({ name: 'Ferris Wheel', min_height: 36, admission_fee: 5, excitement: :gentle })
     ride3 = Ride.new({ name: 'Roller Coaster', min_height: 54, admission_fee: 2, excitement: :thrilling })
@@ -74,7 +74,7 @@ RSpec.describe Carnival do
   end
 
   it 'calculates total revenue from all rides' do
-    carnival = Carnival.new("State Fair", 3)
+    carnival = Carnival.new('State Fair', 3)
     ride1 = Ride.new({ name: 'Carousel', min_height: 24, admission_fee: 1, excitement: :gentle })
     ride2 = Ride.new({ name: 'Ferris Wheel', min_height: 36, admission_fee: 5, excitement: :gentle })
     ride3 = Ride.new({ name: 'Roller Coaster', min_height: 54, admission_fee: 2, excitement: :thrilling })
