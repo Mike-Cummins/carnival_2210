@@ -18,10 +18,20 @@ class Carnival
   end
 
   def most_popular_ride
-    top_ride = @rides.max_by do |ride|
+    @rides.max_by do |ride|
       ride.ride_count
-    end
-    top_ride
+    end 
   end
 
+  def most_profitable_ride
+    @rides.max_by do |ride|
+      ride.total_revenue
+    end
+  end
+
+  def total_ride_revenue
+    @rides.sum do |ride|
+      ride.total_revenue
+    end
+  end
 end
